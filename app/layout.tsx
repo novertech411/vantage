@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Eagle Eye | AI-Powered Eye Care',
-  description: 'Eagle Eye is building accessible retinal imaging and AI-assisted glaucoma screening support for the point of care.',
+  title: 'Eagle Eye | Intelligent Eye Care',
+  description: 'Eagle Eye is building accessible retinal imaging and intelligent glaucoma screening support for the point of care.',
   generator: 'v0.app',
   icons: {
     icon: [
