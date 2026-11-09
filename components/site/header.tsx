@@ -1,38 +1,54 @@
 'use client'
 
-import { useState } from 'react'
-import { ArrowRight, Menu, X } from 'lucide-react'
-import { logo, navLinks } from '@/lib/site-data'
+import { useEffect, useState } from 'react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
+import { loginHref, navLinks } from '@/lib/site-data'
+import { Brand } from './brand'
 
 export function Header() {
   const [open, setOpen] = useState(false)
 
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false)
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  const close = () => setOpen(false)
+
   return (
-    <header className="eagle-nav">
-      <a className="eagle-brand" href="#home">
-        <img src={logo} alt="Eagle Eye" />
-      </a>
-      <nav className="nav-links">
-        {navLinks.map(({ label, href }) => (
-          <a href={href} key={label}>{label}</a>
-        ))}
-      </nav>
-      <a className="nav-button" href="#contact">
-        Partner with us <ArrowRight size={14} />
-      </a>
-      <button className="nav-menu" aria-label="Toggle navigation" onClick={() => setOpen(!open)}>
-        {open ? <X /> : <Menu />}
-      </button>
-      {open && (
-        <nav className="mobile-links">
+    <header className="nav-wrap">
+      <div className="shell nav">
+        <Brand />
+
+        <nav className={`nav-links${open ? ' open' : ''}`} id="nav-links" aria-label="Main navigation">
           {navLinks.map(({ label, href }) => (
-            <a href={href} key={label} onClick={() => setOpen(false)}>{label}</a>
+            <a href={href} key={label} onClick={close}>{label}</a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)}>
-            Partner with us <ArrowRight size={14} />
+          <a className="mobile-only" href={loginHref} onClick={close}>Log in</a>
+          <a className="btn mobile-only" href="#partner" onClick={close}>
+            Partner with us <ArrowUpRight size={16} />
           </a>
         </nav>
-      )}
+
+        <div className="nav-actions">
+          <a className="nav-login" href={loginHref}>Log in</a>
+          <a className="btn" href="#partner">
+            Partner with us <ArrowUpRight size={16} />
+          </a>
+        </div>
+
+        <button
+          className="menu-btn"
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-controls="nav-links"
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
+      </div>
     </header>
   )
 }
