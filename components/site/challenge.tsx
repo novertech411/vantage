@@ -27,6 +27,16 @@ export function Challenge() {
           </div>
           <p className="source">{statsSource}</p>
         </div>
+        <figure className="challenge-photo">
+          <img
+            src="/img/community-women-1400.webp"
+            srcSet="/img/community-women-720.webp 720w, /img/community-women-1400.webp 1400w"
+            sizes="(max-width: 1200px) 100vw, 1132px"
+            alt="Older women from a rural community, one wearing glasses"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </section>
   )

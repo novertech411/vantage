@@ -3,6 +3,15 @@ import { ArrowUpRight } from 'lucide-react'
 export function Vision() {
   return (
     <section className="section vision" id="about">
+      <img
+        className="vision-bg"
+        src="/img/community-gathering-1920.webp"
+        srcSet="/img/community-gathering-960.webp 960w, /img/community-gathering-1920.webp 1920w"
+        sizes="100vw"
+        alt=""
+        loading="lazy"
+        decoding="async"
+      />
       <div className="shell vision-grid">
         <div>
           <div className="eyebrow">Our vision</div>

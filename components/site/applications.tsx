@@ -10,11 +10,17 @@ export function Applications() {
           <p className="lead">Designed with practical screening environments and greater access in mind.</p>
         </div>
         <div className="care-grid">
-          {applications.map(({ tag, title, text, variant, icon: Icon }) => (
+          {applications.map(({ tag, title, text, image, alt }) => (
             <article className="care-card" key={title}>
-              <div className={`care-art ${variant}`} aria-hidden="true">
-                <div className="care-abstract" />
-                <Icon className="care-icon" size={70} strokeWidth={1.2} />
+              <div className="care-art">
+                <img
+                  src={`/img/${image}-1200.webp`}
+                  srcSet={`/img/${image}-640.webp 640w, /img/${image}-1200.webp 1200w`}
+                  sizes="(max-width: 560px) 100vw, 50vw"
+                  alt={alt}
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div className="care-copy">
                 <div className="care-tag">{tag}</div>

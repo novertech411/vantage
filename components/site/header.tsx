@@ -7,6 +7,15 @@ import { Brand } from './brand'
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Transparent over the full-bleed hero, solid once the page scrolls.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -18,7 +27,7 @@ export function Header() {
   const close = () => setOpen(false)
 
   return (
-    <header className="nav-wrap">
+    <header className={`nav-wrap${scrolled || open ? ' solid' : ''}`}>
       <div className="shell nav">
         <Brand />
 

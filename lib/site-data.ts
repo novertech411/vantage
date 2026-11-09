@@ -1,6 +1,4 @@
 import {
-  Activity,
-  Building2,
   Camera,
   BrainCircuit,
   HeartHandshake,
@@ -64,21 +62,21 @@ export const steps: Step[] = [
   { title: 'Care', text: 'Support appropriate follow-up and referral decisions.', icon: HeartHandshake },
 ]
 
-export type Application = { tag: string; title: string; text: string; variant: 'community' | 'clinic'; icon: LucideIcon }
+export type Application = { tag: string; title: string; text: string; image: string; alt: string }
 
 export const applications: Application[] = [
   {
     tag: '01 / Beyond the clinic',
     title: 'Community outreach',
     text: 'Supporting the possibility of eye screening in outreach programs and areas where specialist services may be less accessible.',
-    variant: 'community',
-    icon: Building2,
+    image: 'community-glasses',
+    alt: 'An elderly man being fitted with new glasses at a community eye outreach',
   },
   {
     tag: '02 / Within care systems',
     title: 'Clinical workflows',
     text: 'Giving eye-care teams a practical framework for image capture, screening support, and professional assessment.',
-    variant: 'clinic',
-    icon: Activity,
+    image: 'clinic-exam',
+    alt: 'A clinician examining a young woman\'s eye with a penlight in a clinic',
   },
 ]
