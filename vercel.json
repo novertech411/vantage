@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/login",
+      "destination": "https://eagle-eye-brown.vercel.app/login"
+    },
+    {
+      "source": "/login/:path*",
+      "destination": "https://eagle-eye-brown.vercel.app/login/:path*"
+    }
+  ]
+}
