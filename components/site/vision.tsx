@@ -4,8 +4,20 @@ import { ArrowUpRight } from "lucide-react";
 export function Vision() {
   return (
     <section className="section vision" id="about">
+      <div className="vision-photo">
+        <img
+          src="/img/our-vision-1400.webp"
+          srcSet="/img/our-vision-720.webp 720w, /img/our-vision-1400.webp 1400w"
+          sizes="(max-width: 800px) 100vw, 50vw"
+          alt="An Eagle Eye team member holding up the Eagle Lens app beside an Eagle Eye banner"
+          width={1400}
+          height={2100}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
       <div className="shell vision-grid">
-        <div>
+        <div className="vision-copy">
           <div className="eyebrow">Our vision</div>
           <h2>
             Advanced eye care within
@@ -22,15 +34,6 @@ export function Vision() {
           <Link href="/partner" className="btn light">
             Work with us <ArrowUpRight size={16} />
           </Link>
-        </div>
-        <div className="vision-emblem">
-          <img
-            src="/eagle-mark.webp"
-            alt="Eagle Eye eagle symbol"
-            width={370}
-            height={226}
-          />
-          <div className="vision-label">YOUR EYE CARE SQUAD.</div>
         </div>
       </div>
     </section>
