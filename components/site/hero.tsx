@@ -16,11 +16,11 @@ export function Hero() {
 
       <div className="shell hero-inner">
         <div className="hero-content">
-          <h1 id="hero-title">
+          <h2 id="hero-title" className="">
             Advanced eye
             <br />
             <span className="accent-light"> Screening technology</span>
-          </h1>
+          </h2>
           <p className="lead">
             We&apos;re making early eye screening more accessible through
             portable imaging, intelligent analysis, and connected care.

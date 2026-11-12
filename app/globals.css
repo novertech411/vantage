@@ -125,13 +125,11 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.035em }
 .feature-lines { display: flex; flex-direction: column; gap: 18px; margin: 36px 0 0; padding: 0; list-style: none }
 .feature-line { display: flex; align-items: center; gap: 13px; font-size: 12px; font-weight: 800 }
 .feature-line span { width: 36px; height: 36px; border: 1px solid #70418f; border-radius: 10px; display: grid; place-items: center; color: #d39bef }
-.product-showcase { position: relative; height: 460px; display: grid; place-items: center }
-.product-glow { position: absolute; width: 410px; height: 410px; border-radius: 50%; background: radial-gradient(circle, #8b3dcb 0, rgba(96, 17, 157, .7) 37%, transparent 69%); filter: blur(13px) }
-.retina-disc { position: relative; width: 335px; height: 335px; border-radius: 50%; padding: 12px; background: linear-gradient(135deg, #a765dd, #392056 45%, #924adb); box-shadow: 0 0 0 20px rgba(190, 129, 244, .07), 0 0 0 55px rgba(190, 129, 244, .035), 0 30px 65px #160025 }
-.retina-disc img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover }
-.screen-float { position: absolute; bottom: 13px; right: -12px; border-radius: 14px; background: #fff; color: #1e1730; padding: 14px 17px; box-shadow: 0 20px 40px #160025; font-weight: 800; font-size: 11px; max-width: 190px }
-.screen-float small { display: block; color: #8f8296; font-size: 9px; font-weight: 600; margin-top: 6px }
-.screen-float i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #27b879; margin-right: 6px }
+.product-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 50%; z-index: 0 }
+.product-photo img { width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 62% 50% }
+/* Fade the photo's left edge into the section so the text column and image read as one surface. */
+.product-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #210039 0, rgba(33, 0, 57, .55) 18%, transparent 42%) }
+.product-layout > div { grid-column: 1; z-index: 1 }
 
 /* ---------- Workflow ---------- */
 .workflow { background: #f7f2fc }
@@ -214,8 +212,10 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.035em }
   .trust-points { gap: 18px }
   .challenge-grid, .product-layout, .vision-grid { grid-template-columns: 1fr }
   .challenge-grid { gap: 38px }
-  .product-layout { gap: 0 }
-  .product-showcase { height: 420px }
+  .product-layout { gap: 0; min-height: 0 }
+  .section.product-section { padding-bottom: 0 }
+  .product-photo { position: relative; width: 100%; aspect-ratio: 3 / 2; margin-top: 56px }
+  .product-photo::after { background: linear-gradient(180deg, #210039 0, transparent 30%) }
   .steps { grid-template-columns: 1fr 1fr }
   .step:nth-child(2)::after { display: none }
   .vision-emblem { height: 260px }
@@ -238,11 +238,7 @@ h3 { font-size: 20px; line-height: 1.3; letter-spacing: -.035em }
   .stat strong { font-size: 32px }
   .stat p { font-size: 10px }
   .stat.wide { gap: 14px }
-  .product-showcase { height: 360px }
-  .retina-disc { width: 255px; height: 255px }
-  .product-glow { width: 300px; height: 300px }
-  .screen-float { right: 0; bottom: 4px; font-size: 9px }
-  .steps { grid-template-columns: 1fr; gap: 12px }
+    .steps { grid-template-columns: 1fr; gap: 12px }
   .step { min-height: 0; padding: 22px; display: grid; grid-template-columns: 62px 1fr; column-gap: 14px }
   .step-index { grid-column: 1 / -1 }
   .step-icon { grid-row: 2 / 4; margin: 14px 0 0 }

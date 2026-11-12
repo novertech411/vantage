@@ -8,14 +8,16 @@ export function Vision() {
         <div>
           <div className="eyebrow">Our vision</div>
           <h2>
-            Built in Nigeria.
+            Advanced eye care within
             <br />
-            <span className="accent-light">Made to go further.</span>
+            <span className="accent-light">reach, worldwide.</span>
           </h2>
           <p className="lead">
-            We believe impactful healthcare innovation should be developed with
-            real communities in mind. Eagle Eye is working toward a future where
-            earlier eye assessment can reach more people, in more places.
+            We envision a future where people everywhere can access early eye
+            screening and get the specialist care they need. At Eagle Eye, we’re
+            building affordable imaging devices, intelligent analysis, and
+            connected clinical tools that help care teams assess eye health
+            earlier and coordinate follow-up across care settings.
           </p>
           <Link href="/partner" className="btn light">
             Work with us <ArrowUpRight size={16} />

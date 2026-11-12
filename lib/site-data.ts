@@ -117,7 +117,7 @@ export const applications: Application[] = [
     tag: "02 / Within care systems",
     title: "Clinical workflows",
     text: "Giving eye-care teams a practical framework for image capture, screening support, and professional assessment.",
-    image: "clinic-exam",
-    alt: "A clinician examining a young woman's eye with a penlight in a clinic",
+    image: "clinic-workflow",
+    alt: "A clinician in gloves reviewing screening results on a laptop beside an Eagle Eye banner",
   },
 ];
