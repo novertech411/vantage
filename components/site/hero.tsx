@@ -17,9 +17,9 @@ export function Hero() {
       <div className="shell hero-inner">
         <div className="hero-content">
           <h1 id="hero-title">
-            See beyond.
+            Advanced eye
             <br />
-            <span className="accent-light">Reach further.</span>
+            <span className="accent-light"> Screening technology</span>
           </h1>
           <p className="lead">
             We&apos;re making early eye screening more accessible through
