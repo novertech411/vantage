@@ -26,10 +26,10 @@ export function Hero() {
             portable imaging, intelligent analysis, and connected care.
           </p>
           <div className="hero-actions">
-            <a className="btn" href="#eagle-lens">
+            <a className="btn" href="/eagle-lens">
               Discover Eagle Lens <ArrowUpRight size={16} />
             </a>
-            <a className="btn glass" href="#how-it-works">
+            <a className="btn glass" href="/how-it-works">
               See how it works <ArrowRight size={16} />
             </a>
           </div>

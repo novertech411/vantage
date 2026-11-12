@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Manrope } from 'next/font/google'
+import { Header } from '@/components/site/header'
+import { Footer } from '@/components/site/footer'
 import './globals.css'
 
 const manrope = Manrope({
@@ -36,7 +38,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={manrope.variable}>
       <body>
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

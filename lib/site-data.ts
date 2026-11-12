@@ -17,18 +17,18 @@ export const partnerMailto = `mailto:${contactEmail}?subject=${encodeURIComponen
 export const loginHref = '/login'
 
 export const navLinks = [
-  { label: 'Home', href: '#top' },
-  { label: 'Eagle Lens', href: '#eagle-lens' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Our impact', href: '#impact' },
-  { label: 'About us', href: '#about' },
+  { label: 'Home', href: '/' },
+  { label: 'Eagle Lens', href: '/eagle-lens' },
+  { label: 'How it works', href: '/how-it-works' },
+  { label: 'Our impact', href: '/impact' },
+  { label: 'About us', href: '/about' },
 ]
 
 export const footerLinks = [
-  { label: 'Technology', href: '#eagle-lens' },
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'About', href: '#about' },
-  { label: 'Partnerships', href: '#partner' },
+  { label: 'Technology', href: '/eagle-lens' },
+  { label: 'How it works', href: '/how-it-works' },
+  { label: 'About', href: '/about' },
+  { label: 'Partnerships', href: '/partner' },
   { label: 'Log in', href: loginHref },
 ]
 
